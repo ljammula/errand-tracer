@@ -1,8 +1,8 @@
-import { useRef, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useRef, useContext } from "react";
+import { useHistory } from "react-router-dom";
 
-import AuthContext from '../../store/auth-context';
-import classes from './ProfileForm.module.css';
+import AuthContext from "../../store/auth-context";
+import classes from "./ProfileForm.module.css";
 
 const ProfileForm = () => {
   const history = useHistory();
@@ -17,20 +17,20 @@ const ProfileForm = () => {
 
     // add validation
 
-    fetch('https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyCSGBPZ7sYN4g6AoSCoG3I3HROtbiCFwDA', {
-      method: 'POST',
+    fetch("https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyCSGBPZ7sYN4g6AoSCoG3I3HROtbiCFwDA", {
+      method: "POST",
       body: JSON.stringify({
         idToken: authCtx.token,
         password: enteredNewPassword,
         returnSecureToken: false
       }),
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json"
       }
     }).then(res => {
       // assumption: Always succeeds!
 
-      history.replace('/');
+      history.replace("/");
     });
   };
 

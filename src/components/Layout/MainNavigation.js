@@ -1,8 +1,8 @@
-import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 
-import AuthContext from '../../store/auth-context';
-import classes from './MainNavigation.module.css';
+import AuthContext from "../../store/auth-context";
+import classes from "./MainNavigation.module.css";
 
 const MainNavigation = () => {
   const authCtx = useContext(AuthContext);
